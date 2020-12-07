@@ -8,25 +8,22 @@ const month = ["січня", "лютого", "беререзня", "квітня
 
 let post_template = `<b>${day[new Date().getDay()]}, ${new Date().getDate()} ${month[new Date().getMonth()]} ${new Date().getFullYear()}</b>\n
 	\n
-	\n
-	\n
 	<b>П'ять речей, зроблених за день, якими я пишаюсь:</b>\n
-	\n
-	<b>1. </b>\n
-	<b>2. </b>\n
-	<b>3. </b>\n
-	<b>4. </b>\n
+	<b>1. </b>
+	<b>2. </b>
+	<b>3. </b>
+	<b>4. </b>
 	<b>5. </b>`
 
 const startBot = () => {
 
 	bot.start( ctx => ctx.reply(
-		`Привіт, ${ctx.from.first_name}!\n
-		Я – бот розроблений @MATU_KOTIB, щоб зручно вести щоденик.\n
+		`Привіт, ${ctx.from.first_name}!
+		Я – бот розроблений @MATU_KOTIB, щоб зручно вести щоденик.
 		Підключи мене до свого щоденника, як це вказано в інструкції нижче.`
 	))
 	
-	
+
 	bot.command("work", (ctx) => {
 		ctx.reply("YES!!! -3!!! uuhhhuuuuu!!!!")
 	})
