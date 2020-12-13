@@ -1,13 +1,11 @@
-const Telegraf = require('telegraf');
-const bot = new Telegraf(process.env.TOKEN);
-
 const cron = require('node-cron')
+const Telegraf = require('telegraf')
+const bot = new Telegraf(process.env.TOKEN)
 
 const day = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
 const month = ["січня", "лютого", "беререзня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"]
 
-let post_template = `<b>${day[new Date().getDay()]}, ${new Date().getDate()} ${month[new Date().getMonth()]} ${new Date().getFullYear()}</b>\n
-	\n
+let post_template = `<b>${day[new Date().getDay()]}, ${new Date().getDate()} ${month[new Date().getMonth()]} ${new Date().getFullYear()}</b>\n\n\n
 	<b>П'ять речей, зроблених за день, якими я пишаюсь:</b>\n
 	<b>1. </b>
 	<b>2. </b>
@@ -36,7 +34,10 @@ const startBot = () => {
 
 	cron.schedule('0 7 * * *', () => {
 		bot.telegram.sendMessage(process.env.CHANNEL, post_template, {parse_mode : "HTML"})
-})
+	}, {
+		scheduled: true,
+		timezone: "Europe/Kiev"
+	})
 
 	bot.launch();
 }
