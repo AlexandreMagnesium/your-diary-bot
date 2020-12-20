@@ -34,7 +34,7 @@ const startBot = () => {
 
 	cron.schedule('0 7 * * *', () => {
 		bot.telegram.sendMessage(process.env.CHANNEL, post_template, {parse_mode : "HTML"})
-	)
+	})
 
 	bot.launch();
 }
