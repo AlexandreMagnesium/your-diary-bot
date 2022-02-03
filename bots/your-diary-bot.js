@@ -23,7 +23,7 @@ const startBot = () => {
 	
 
 	bot.command("work", (ctx) => {
-		ctx.reply(`YES!!! -3!!! uuhhhuuuuu!!!! \n  ${new Date()}`)
+		ctx.reply(`YES!!! -3!!! uuhhhuuuuu!!!! aa \n  ${new Date()}`)
 	})
 
 
